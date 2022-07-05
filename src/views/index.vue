@@ -1,13 +1,6 @@
 <template>
-  <div class="home">
-  </div>
+  <div class="home"></div>
 </template>
 
-<script>
-
-export default {
-  name: 'HomeView',
-  components: {
-  }
-}
-</script>
+<script setup></script>
+<style lang="scss" scoped></style>

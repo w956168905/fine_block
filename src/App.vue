@@ -1,19 +1,30 @@
 <template>
-  <router-view/>
+  <div class="view">
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </div>
 </template>
 <script>
-import { useStore } from 'vuex'
+import { useStore } from "vuex";
 export default {
-  name: 'app',
-  setup () {
-    const store = useStore()
-    const info = localStorage.getItem('INFO')
+  name: "app",
+  setup() {
+    // 初始化vuex中用户信息
+    const store = useStore();
+    const info = localStorage.getItem("INFO");
     if (info) {
-      console.log(store)
+      store.commit("setInfo", info);
     }
-  }
-}
+  },
+};
 </script>
-<style lang="scss">
-
+<style lang="scss" scoped>
+.view {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
 </style>
