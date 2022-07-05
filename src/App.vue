@@ -14,7 +14,7 @@ export default {
   setup() {
     // 初始化vuex中用户信息
     const store = useStore();
-    const info = localStorage.getItem("INFO");
+    const info = JSON.parse(localStorage.getItem("INFO"));
     if (info) {
       store.commit("setInfo", info);
     }

@@ -9,7 +9,7 @@ export default createStore({
   mutations: {
     setInfo (state, data) {
       state.info = data
-      localStorage.setItem('INFO', data)
+      localStorage.setItem('INFO', JSON.stringify(data))
     }
   },
   actions: {

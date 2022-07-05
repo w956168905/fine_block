@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <div class="form" :class="{ foc: foc }" :style="{}">
+    <div class="form" :class="{ foc: foc }" @keyup.enter="submit">
       <el-form label-width="60px" :model="formData">
         <el-form-item label="用户名">
           <el-input
@@ -14,11 +14,11 @@
             v-model="formData.passWord"
             @focus="focus(true)"
             @blur="focus(false)"
+            type="password"
           />
         </el-form-item>
         <el-form-item label-width="0px" class="submits">
           <el-button text color="#000">注册</el-button>
-
           <el-button color="#626aef" @click="submit">登录</el-button>
         </el-form-item>
       </el-form>
@@ -42,9 +42,10 @@ let focus = (bol) => {
 
 //登录逻辑
 let formData = reactive({
-  userId: "sgbf",
-  passWord: "456ghj",
+  userId: "",
+  passWord: "",
 });
+
 //登录方法
 const submit = async () => {
   if (formData.userId && formData.passWord) {
@@ -55,6 +56,8 @@ const submit = async () => {
       //登录后存储信息到缓存和vuex
       store.commit("setInfo", res.data);
       router.push({ path: "/" });
+    } else {
+      ElMessage.error(res.data);
     }
   } else {
     ElMessage.error("请输入账号密码");
@@ -105,6 +108,9 @@ const submit = async () => {
           justify-content: space-around;
         }
       }
+    }
+    &:hover {
+      box-shadow: 32px 32px 0px #292929, -32px -32px 0px #a3a3a3;
     }
   }
   .foc {
