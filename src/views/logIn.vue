@@ -75,7 +75,7 @@ const submit = async () => {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(2);
     width: 450px;
     height: 300px;
     border-radius: 59px;
