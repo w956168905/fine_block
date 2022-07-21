@@ -75,13 +75,13 @@ const submit = async () => {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, -50%) scale(1);
     width: 450px;
     height: 300px;
     border-radius: 59px;
-    background: #666666;
+    background: #1ad9a6;
     transition: all 0.4s linear 0s;
-    box-shadow: 32px 32px 40px #292929, -32px -32px 40px #a3a3a3;
+    box-shadow: 32px 32px 40px #12c067, -32px -32px 40px #18fa85;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,11 +110,11 @@ const submit = async () => {
       }
     }
     &:hover {
-      box-shadow: 32px 32px 0px #292929, -32px -32px 0px #a3a3a3;
+      box-shadow: 32px 32px 0px #12c067, -32px -32px 0px #18fa85;
     }
   }
   .foc {
-    box-shadow: 32px 32px 0px #292929, -32px -32px 0px #a3a3a3;
+    box-shadow: 32px 32px 0px #12c067, -32px -32px 0px #18fa85;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 import Axios from 'axios';
-
+import router from '../router/index'
 const axios = Axios.create({
-  baseURL: 'http://127.0.0.1:7001', // 地址
+  baseURL: process.env.VUE_APP_BASE_URL+'/block', // 地址
   timeout: 6000, // 请求超时
 });
 
